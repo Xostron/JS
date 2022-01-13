@@ -130,7 +130,7 @@ a:active {
 .column2{
   display: flex;
   flex-direction: column;
-  background-color: #FFF;
+  background-color: rgb(255, 255, 255);
   align-items:flex-start;
   width: 70%;
 }

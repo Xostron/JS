@@ -170,3 +170,26 @@ let iso = now.toISOString()
 console.log('log = ' + iso)
 
 //
+console.log(document.getElementById("maininput").value)
+function run() {
+    let btn = document.getElementById("main").value
+    // let state = document.bdy.scr.col2.but.value
+    // console.log("State = " + state)
+    // let state = HTMLInputElement("but").value
+    // console.log(state)
+    if (btn == "change1") {
+        document.getElementById("main").value = "change2"
+        document.getElementById("main").style.backgroundColor = "#f3e8d2"
+    } else {
+        document.getElementById("main").value = "change1"
+        document.getElementById("main").style.backgroundColor = "#daeaf7"
+    }
+}
+function displayTime() {
+    let clock = document.querySelector("#clock")
+    let now = new Date()
+    clock.textContent = now.toLocaleTimeString()
+}
+displayTime()
+setInterval(displayTime, 1000)
+setInterval(run, 2000)

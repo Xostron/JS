@@ -10,14 +10,14 @@
   <title>Resume</title>
 </head>
 
-<body>
-  <div class="page">
+<body name="bdy">
+  <div class="page" id="screen" name="scr">
     <!--1 колонка-->
     <div class="column1">
       <img class="avatar" src="media\avatar.jpg" alt="">
       <div class="info">
         <div class="name">
-          Гарвель <span class="surname"><br> Локен</span>
+          Аскар <span class="surname"><br> Акимжанов</span>
         </div>
         <div class="career-objective">
           Желаемая должность: <span class="specialty"><br>junior web-developer</span>
@@ -66,11 +66,11 @@
             <div class="custom-border1-2"></div>
           </div>
         </span>
-        HTML, CSS, Python, flask, JavaScript, PostgreSQL, Git;
+        HTML, CSS, Python(flask), JavaScript(Node), PostgreSQL, Git;
       </div>
     </div>
     <!--2 колонка-->
-    <div class="column2">
+    <div class="column2" id="main" name="col2">
       <div class="col2-title">
         <img src="media\exp.png" width=25px alt="">
         <span class="col2-label">Опыт работы
@@ -92,7 +92,7 @@
           Инженер-программист АСУТП
           (программирование контроллеров Siemens,
           визуализация технологических процессов (HMI, SCADA, WinCC OA),
-          пуско-наладочные работы)
+          пуско-наладочные работы
         </div>
       </div>
 
@@ -168,7 +168,9 @@
           <br>Автоматизация технологических процессов и производств
         </div>
       </div>
-
+      <p><textarea id="maininput" type="text" name="text">Hello!</textarea></p>
+      <p><input id="but" type="button" value="change1" onclick="run()" name="but"></p>
+      <span id="clock"></span>
 
     </div>
   </div>
