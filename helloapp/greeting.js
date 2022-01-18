@@ -1,10 +1,18 @@
 let currentDate = new Date()
-module.exports.date = currentDate
+
+
+// Node.js предоставляет специальный объект global, который 
+//предоставляет доступ к глобальным, то есть доступным из 
+//каждого модуля приложения, переменным и функциям.
+global.date = currentDate
+
+
 module.exports.name = "Styuna"
-module.exports.getMessage = function (name) {
+
+module.exports.getMessage = function () {
     let hour = currentDate.getHours()
     if (hour > 16)
-        return "Добрый вечер, " + name
+        return "Добрый вечер, " + global.name
     else if (hour > 10)
         return "Добрый день, " + name
     else

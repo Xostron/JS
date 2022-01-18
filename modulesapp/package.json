@@ -1,0 +1,12 @@
+{
+    "name": "modulesapp",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "^4.17.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "jasmine-node": "^3.0.0"
+    }
+}
