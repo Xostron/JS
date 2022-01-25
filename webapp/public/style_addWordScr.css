@@ -1,0 +1,93 @@
+.my-input-field{
+  font-weight: 400;
+  font-family: Rubik;
+  font-size: 22px;
+  color: #131D25;
+}
+/* ===============Шрифты end================ */
+
+.screen2{
+/*Стиль области - главный холст*/
+  display flex;
+  width:50%;
+  min-width: 425px;
+  margin:1% auto;
+  /* background-color: #EfEfEf; */
+  border: 1px solid #b8ceff;/*#B4CCFB;*/
+  border-radius: 16px;
+}
+
+/*Стиль области - содержимое*/
+.area__scr2{
+  display:flex;
+  flex-direction:column;
+  width: 90%;
+  margin: 2% auto;
+  /* background-color: #F8FFAF; */
+}
+
+/*Стили оглавления*/
+.title__scr2{
+  display: none; /*переключается на flex/none в JS*/
+  width:100%;
+  /* background-color: #08FFAF; */
+}
+.title_mod__scr2{
+  display:flex; /*переключается на flex/none в JS*/
+  width:100%;
+  /* background-color: #A83F7F; */
+}
+#ok_btn{
+  opacity: 0.5;
+}
+
+
+/* test: flex-direction: default = row */
+/* .myRow{
+  display: flex;
+  width:100%;
+  height:100px;
+  background-color: #AAA;
+}
+.a{
+  width:40px;
+  height:40px;
+  border-radius: 40px;
+  background-color: #12ABEF;
+}
+.b{
+  display:flex;
+  width:33%;
+  height:50px;
+  background-color: #EFABEF;
+  align-items:center;
+  justify-content: center;
+}
+.c{
+  width:40px;
+  height:40px;
+  border-radius: 40px;
+  background-color: #ABABEF;
+  margin-left: 50%;
+
+} */
+/* test end */
+
+
+
+/*стили для полей ввода*/
+.input_fields__scr2{
+  width: 90%;
+  margin:auto;
+  color:#A7A8AB;
+  margin-top: 24px;
+}
+.input_field{
+  width: 98%;
+  height: 56px;
+  border: 2px solid #B4CCFB;
+  border-radius: 16px;
+  background: #FFFFFF;
+  margin-bottom: 24px;
+  tex
+}
