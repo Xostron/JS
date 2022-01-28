@@ -6,10 +6,9 @@ let currentDate = new Date()
 //каждого модуля приложения, переменным и функциям.
 global.date = currentDate
 
-
-module.exports.name = "Styuna"
-
-module.exports.getMessage = function () {
+exports.name = "Styuna"
+exports.id = 42
+exports.getMessage = function () {
     let hour = currentDate.getHours()
     if (hour > 16)
         return "Добрый вечер, " + global.name

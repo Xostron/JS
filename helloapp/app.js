@@ -35,11 +35,11 @@ http.createServer(function (request, response) {
 // let userName = os.userInfo().username
 // console.log("userName = ", userName)
 
-// //Поключение модуля greeting.js
-// const greeting = require("./greeting")
+//Поключение модуля greeting.js
+const greeting = require("./greeting")
 // // console.log(`Дата запроса: ${greeting.date}`)
 // // console.log(greeting.getMessage(userName))
-// // console.log(`Hello ${greeting.name}`)
+console.log(`Hello ${greeting.name}, id = ${greeting.id}`)
 
 // let greeting2 = require("./greeting.js")
 // greeting2.name = "Sofia"

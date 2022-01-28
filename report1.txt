@@ -2,3 +2,9 @@
 Один из первых примархов найденный Императором на умирающей планете 
 Впоследствии был отравлен влиянием хаоса, которому поспособствовал легион Несущих слово
 Любимый сын Императора
+
+Изменение пути к файлу
+const path = require("path");
+    console.log("Path test = ", __dirname)
+    let hbsPath = path.join(__dirname, "../views")
+    console.log("hbsPath test= ", hbsPath)
