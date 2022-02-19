@@ -17,121 +17,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7,IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="https://translate.ru/favicon.ico" />
-    <link rel="stylesheet" href="style_mainScr.css">
+
 
 </head>
 
 <body>
 
-    <!--*********************SCREEN*********************-->
-    <!--Canvas-->
-    <div class="screen1">
-        <!--area app-->
-        <div class="area__scr1">
-            <!--title-->
-
-            <div class="menu_title__src1">
-                <div class="menu__bg" id="background_menu">
-                    <div class="circle_menu">
-                        <img class="menu__img" src="icon\menu.png" width="18px" onclick="menu_run()" alt="">
-                    </div>
-                    <label class="title__txt" for="background_menu">Repeat EN >> RU</label>
-                </div>
-            </div>
-
-            <!--mode-->
-            <div class="choice_mode__src1">
-                <label class="custom-radio">
-                    <input type="radio" name="mode" id="mode" value="1" onclick="change_mode()" checked>
-                    <span>Repeat mode</span></label>
-                <label class="custom-radio">
-                    <input type="radio" name="mode" id="mode" value="2" onclick="change_mode()">
-                    <span>Learning mode</span></label>
-            </div>
-
-            <!--statistic-->
-            <div class="statistic__src1">
-                <div id="text1">Repeat count:</div>
-                <div id="text2">Last repeat date (RUS):</div>
-                <div id="text3">W/L ratio:</div>
-            </div>
-
-            <!--word, transcription, translate, current status-->
-            <div class="com_out_field__scr1" name="com_group">
-                <div class="my-output-field">
-                    <div class="my-field-label" id="my-field-label_1">Word</div>
-                    <output class="my-field-out" name="result">Значение</output>
-                </div>
-                <div class="my-output-field">
-                    <div class="my-field-label">Transcription</div>
-                    <output class="my-field-out" name="result">[ˈvæljuː]</output>
-                </div>
-                <div class="my-output-field" id="field_translate" name="translate">
-                    <div class="my-field-label" id="my-field-label_3">Translate</div>
-                    <output class="my-field-out" name="result" id="translate_result">Value</output>
-                </div>
-                <div id="curr-count">
-                    Count:
-                    <output name="result">XX (XX mistakes / XX%)</output>
-                </div>
-            </div>
-
-            <!--control btn-->
-            <div class="com_btn_field__src1">
-                <div class="my-control-volume">
-                    <img class="eff-btn" src="icon\vlm.png" height="45">
-                </div>
-                <div id="sub-row">
-                    <img class="eff-btn" src="icon\close.png" height="45" onclick="next_wrong()">
-                    <img class="eff-btn" src="icon\ok2.png" height="45" onclick="next_right()">
-                </div>
-                <div class="my-control-filter">
-                    <img class="eff-btn" src="icon\filter.png" height="45">
-                </div>
-            </div>
-
-            <!--btn move to Screen2-->
-            <div class="btn__src1" id="btn__src1">
-                <label class="my-btn" for="btn__src1">GO TO WORDS-TABLE</label>
-            </div>
-        </div>
-    </div>
-
-    <div id="app"></div>
-
-    <!--my js-script-->
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="jqueryui.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <div id="appp"></div>
 
 
 
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js" crossorigin></script>
+
+    <script src="https://unpkg.com/react-router@6/umd/react-router.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js" crossorigin></script>
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel">
-        class ClickButton extends React.Component {
 
-            constructor(props) {
-                super(props);
-                this.state = { counter: 0 };
-                this.press = this.press.bind(this);
-            }
-            press() {
-                this.setState({ counter: this.state.counter + parseInt(this.props.increment) });
-                this.setState({ counter: this.state.counter + parseInt(this.props.increment) });
-            }
+    <script type="text/babel">
+        const Router = ReactRouterDOM.BrowserRouter
+        const Route = ReactRouterDOM.Route
+        const Routes = ReactRouterDOM.Routes
+
+        class About extends React.Component {
             render() {
-                return <div>
-                    <button onClick={this.press}>Count</button>
-                    <div>Counter: {this.state.counter} <br />Increment: {this.props.increment}</div>
-                </div>
+                return <h2>About</h2>
+            }
+        }
+        class Main extends React.Component {
+            render() {
+                return <h2>Main</h2>
+            }
+        }
+        class NotFound extends React.Component {
+            render() {
+                return <h2>This page not found</h2>
             }
         }
 
         ReactDOM.render(
-            <ClickButton increment="1" />,
-            document.getElementById("app")
+            <Router>
+                <div>
+                    <Routes>
+                        <Route path="/" element={<Main />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </div>
+            </Router>,
+            document.getElementById("appp")
         )
     </script>
 

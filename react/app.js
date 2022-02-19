@@ -3,7 +3,7 @@
 
 // http.createServer(function (request, response) {
 
-//     let filePath = __dirname + "/public/addw.html";
+//     let filePath = __dirname + "/public/index.html";
 //     console.log("test1 = ", filePath)
 
 //     if (request.url !== "/") {
@@ -27,6 +27,7 @@
 //     console.log("Server started at 3000 http://localhost:3000");
 // });
 
+/*
 const express = require("express")
 const app = express()
 
@@ -43,3 +44,16 @@ app.listen(3000, function () {
     http://localhost:3000/,\n\
     http://localhost:3000/addw.html")
 })
+ */
+const http = require("http");
+const fs = require("fs");
+
+http.createServer(function (request, response) {
+
+    fs.readFile("react/public/index.html", function (error, data) {
+        response.end(data);
+    });
+
+}).listen(3000, function () {
+    console.log("Server started at 3000");
+});
