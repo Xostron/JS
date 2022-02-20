@@ -13,7 +13,7 @@ router.post(
     [
         check('email', 'Некорректный email').isEmail(),
         check('password', 'Минимальная длина пароля 4 символа')
-            .isLenfth({ min: 4 })
+            .isLength({ min: 4 })
     ],
     async (req, res) => {
         try {
