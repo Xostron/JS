@@ -16,6 +16,7 @@ router.post(
             .isLength({ min: 4 })
     ],
     async (req, res) => {
+        //console.log('Body: ', req.body)
         try {
             const errors = validationResult(req)
 
@@ -81,7 +82,7 @@ router.post(
 
             const token = jwt.sign(
                 { userId: user.id },
-                config.get(jwtSecret),
+                config.get('jwtSecret'),
                 { expiresIn: '1h' }
             )
 
@@ -89,6 +90,7 @@ router.post(
 
 
         } catch (e) {
+            console.log(e.message)
             res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" })
         }
     })
